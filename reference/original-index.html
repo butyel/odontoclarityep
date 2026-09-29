@@ -44,7 +44,7 @@
       "streetAddress": "R. Maceió, 1307 - Centro",
       "addressLocality": "Presidente Epitácio",
       "addressRegion": "SP",
-      "postalCode": "19470-000",
+      "postalCode": "19470-039",
       "addressCountry": "BR"
     },
     "areaServed": {
@@ -148,6 +148,7 @@
     .brand {
       display: inline-flex; align-items: center; gap: 12px; text-decoration: none; min-width: max-content;
     }
+    .brand-img { height: 48px; width: auto; max-width: 220px; object-fit: contain; display: block; }
     .brand-mark {
       width: 46px; height: 46px; border-radius: 15px; display: grid; place-items: center;
       background: linear-gradient(145deg, var(--red-700), var(--red-950)); color: white;
@@ -380,6 +381,7 @@
     footer { background: #111114; color: #c8c8ce; padding: 60px 24px 24px; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr 1.05fr; gap: 38px; }
     .footer-brand { color: white; font-size: 1.08rem; font-weight: 800; }
+    .footer-brand-img { height: 48px; width: auto; max-width: 220px; object-fit: contain; display: block; margin-bottom: 12px; }
     .footer-col p { margin-top: 13px; font-size: .81rem; color: #96969f; }
     .footer-col h4 { color: white; font-size: .83rem; margin-bottom: 14px; }
     .footer-col a { display: block; width: fit-content; margin: 7px 0; color: #a6a6ae; text-decoration: none; font-size: .8rem; }
@@ -492,11 +494,7 @@
   <header id="header">
     <nav aria-label="Navegação principal">
       <a href="#inicio" class="brand" aria-label="Odonto Clarity, página inicial">
-        <span class="brand-mark"><i class="fa-solid fa-tooth"></i></span>
-        <span>
-          <span class="brand-title">Odonto Clarity</span>
-          <span class="brand-sub">Presidente Epitácio</span>
-        </span>
+        <img src="assets/images/logo/Odonto Clarity Logo Topbar.png" alt="Odonto Clarity Logo" class="brand-img">
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -548,7 +546,7 @@
     <section class="about" id="sobre">
       <div class="container about-grid">
         <div class="about-media reveal">
-          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1000&h=900&fit=crop&q=82" alt="Ambiente de clínica odontológica" loading="lazy" decoding="async">
+          <img src="assets/images/Vista externa.webp" alt="Fachada da clínica Odonto Clarity em Presidente Epitácio" loading="lazy" decoding="async">
           <div class="experience"><strong>10+</strong><span>anos de experiência no cuidado odontológico</span></div>
         </div>
 
@@ -698,9 +696,9 @@
         </div>
 
         <div class="gallery-grid">
-          <figure class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1100&h=1000&fit=crop&q=82" alt="Recepção de clínica odontológica" loading="lazy" decoding="async"><figcaption class="gallery-caption"><strong>Recepção acolhedora</strong><span>Ambiente moderno e confortável</span></figcaption></figure>
-          <figure class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&h=500&fit=crop&q=82" alt="Sala de espera" loading="lazy" decoding="async"><figcaption class="gallery-caption"><strong>Sala de espera</strong><span>Conforto e bem-estar</span></figcaption></figure>
-          <figure class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=700&h=500&fit=crop&q=82" alt="Consultório odontológico equipado" loading="lazy" decoding="async"><figcaption class="gallery-caption"><strong>Consultórios equipados</strong><span>Tecnologia para o atendimento</span></figcaption></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/Recepção.webp" alt="Recepção da Odonto Clarity" loading="lazy" decoding="async"><figcaption class="gallery-caption"><strong>Recepção acolhedora</strong><span>Ambiente moderno e confortável</span></figcaption></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/Interior.webp" alt="Ambiente interno e consultórios da Odonto Clarity" loading="lazy" decoding="async"><figcaption class="gallery-caption"><strong>Ambiente interno</strong><span>Estrutura e consultórios equipados</span></figcaption></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/Vista externa.webp" alt="Fachada externa da clínica Odonto Clarity" loading="lazy" decoding="async"><figcaption class="gallery-caption"><strong>Fachada da clínica</strong><span>Fácil acesso no Centro de Presidente Epitácio</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -719,7 +717,7 @@
             <p>Agende sua consulta ou envie sua dúvida para a equipe.</p>
 
             <div class="contact-list">
-              <div class="contact-row"><div class="contact-ico"><i class="fa-solid fa-location-dot"></i></div><div><strong>Endereço</strong><span>R. Maceió, 1307 - Centro<br>Presidente Epitácio - SP, 19470-000</span></div></div>
+              <div class="contact-row"><div class="contact-ico"><i class="fa-solid fa-location-dot"></i></div><div><strong>Endereço</strong><span>R. Maceió, 1307 - Centro<br>Presidente Epitácio - SP, 19470-039</span></div></div>
               <div class="contact-row"><div class="contact-ico"><i class="fa-brands fa-whatsapp"></i></div><div><strong>Telefone / WhatsApp</strong><a href="tel:+5518996782225">(18) 99678-2225</a></div></div>
               <div class="contact-row"><div class="contact-ico"><i class="fa-regular fa-clock"></i></div><div><strong>Horário</strong><span>Segunda a sexta: 09:00 às 18:00<br>Sábado: 09:00 às 13:00</span></div></div>
               <div class="contact-row"><div class="contact-ico"><i class="fa-regular fa-envelope"></i></div><div><strong>E-mail</strong><a href="mailto:contato@odontoclarity.com.br">contato@odontoclarity.com.br</a></div></div>
@@ -735,7 +733,7 @@
           </div>
 
           <div class="map-card reveal">
-            <iframe title="Mapa da Odonto Clarity em Presidente Epitácio" src="https://www.google.com/maps?q=R.%20Macei%C3%B3%2C%201307%20-%20Centro%2C%20Presidente%20Epit%C3%A1cio%20-%20SP%2C%2019470-000&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <iframe title="Mapa da Odonto Clarity em Presidente Epitácio" src="https://www.google.com/maps?q=R.%20Macei%C3%B3%2C%201307%20-%20Centro%2C%20Presidente%20Epit%C3%A1cio%20-%20SP%2C%2019470-039&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             <div class="map-actions"><a class="btn btn-red" href="https://www.google.com/maps/place/Odonto+Clarity+Presidente+Epit%C3%A1cio" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-arrow"></i>Abrir no Maps</a></div>
           </div>
         </div>
@@ -750,7 +748,7 @@
           <p>FAQ construído somente com informações que já constam no site atual.</p>
         </div>
         <div class="faq-wrap">
-          <details class="reveal"><summary>Onde fica a Odonto Clarity?</summary><p>A clínica fica na R. Maceió, 1307, Centro, Presidente Epitácio - SP, CEP 19470-000.</p></details>
+          <details class="reveal"><summary>Onde fica a Odonto Clarity?</summary><p>A clínica fica na R. Maceió, 1307, Centro, Presidente Epitácio - SP, CEP 19470-039.</p></details>
           <details class="reveal"><summary>Quais especialidades aparecem no site?</summary><p>O site apresenta Clínico Geral, Ortodontia, Implantodontia, Estética Orofacial e Endodontia.</p></details>
           <details class="reveal"><summary>Qual é o horário de funcionamento?</summary><p>De segunda a sexta, das 09:00 às 18:00. Aos sábados, das 09:00 às 13:00.</p></details>
           <details class="reveal"><summary>Como falar com a clínica?</summary><p>O contato informado é (18) 99678-2225, com acesso direto ao WhatsApp pelos botões desta página.</p></details>
@@ -769,7 +767,7 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col"><div class="footer-brand"><i class="fa-solid fa-tooth"></i> Odonto Clarity</div><p>Clínica odontológica em Presidente Epitácio com atendimento humanizado, estrutura moderna e diferentes áreas de tratamento.</p><div style="display:flex; gap:10px; margin-top:16px;"><a href="https://www.instagram.com/odontoclarityepitacio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,.07);"><i class="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/odontoclarityepitacio/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,.07);"><i class="fa-brands fa-facebook"></i></a></div></div>
+        <div class="footer-col"><div class="footer-brand"><img src="assets/images/logo/Odonto Clarity Logo Rodapé.png" alt="Odonto Clarity Logo" class="footer-brand-img"></div><p>Clínica odontológica em Presidente Epitácio com atendimento humanizado, estrutura moderna e diferentes áreas de tratamento.</p><div style="display:flex; gap:10px; margin-top:16px;"><a href="https://www.instagram.com/odontoclarityepitacio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,.07);"><i class="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/odontoclarityepitacio/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,.07);"><i class="fa-brands fa-facebook"></i></a></div></div>
         <div class="footer-col"><h4>Navegação</h4><a href="#sobre">A clínica</a><a href="#especialidades">Especialidades</a><a href="#depoimentos">Avaliações</a><a href="#estrutura">Estrutura</a><a href="#contato">Contato</a></div>
         <div class="footer-col"><h4>Especialidades</h4><a href="#especialidades">Clínico Geral</a><a href="#especialidades">Ortodontia</a><a href="#especialidades">Implantodontia</a><a href="#especialidades">Estética Orofacial</a><a href="#especialidades">Endodontia</a></div>
         <div class="footer-col"><h4>Contato</h4><p>R. Maceió, 1307 - Centro<br>Presidente Epitácio - SP</p><a href="tel:+5518996782225">(18) 99678-2225</a><a href="mailto:contato@odontoclarity.com.br">contato@odontoclarity.com.br</a></div>

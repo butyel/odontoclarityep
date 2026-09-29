@@ -1,0 +1,13 @@
+{
+  "name": "odontoclarity-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Site institucional multipágina da Odonto Clarity - Presidente Epitácio/SP",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/build.js && npx serve public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
