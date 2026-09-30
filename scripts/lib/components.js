@@ -13,10 +13,12 @@ const { formatDate } = require('../../src/lib/posts.cjs');
 
 const professionalCard = (prof) => `
   <article class="team-card reveal">
-    <div class="team-avatar${prof.foto ? ' team-avatar-photo' : ''}"${prof.foto ? '' : ' aria-hidden="true"'}>${photoOf(prof)}</div>
-    <h3>${prof.nome}</h3>
-    <p class="team-role">${roleLabel(prof)}</p>
-    <a class="btn btn-ghost" href="/profissionais/${prof.slug}/">Conhecer profissional</a>
+    <div class="team-avatar"${prof.foto ? '' : ' aria-hidden="true"'}>${photoOf(prof, { width: 160, height: 160 })}</div>
+    <div class="team-card__body">
+      <h3 class="team-card__name">${prof.nome}</h3>
+      <p class="team-role">${roleLabel(prof)}</p>
+    </div>
+    <p class="team-card__cta"><a class="btn btn-ghost" href="/profissionais/${prof.slug}/">Conhecer profissional</a></p>
   </article>`;
 
 // ---------- Card de artigo ---------------------------------------------------
@@ -74,7 +76,7 @@ const faqSection = (faq, title) => `
 const aboutProfessionalBlock = (prof) => `
   <section class="about-prof">
     <div class="container about-prof-grid">
-      <div class="about-prof-avatar${prof.foto ? ' team-avatar-photo' : ''}"${prof.foto ? '' : ' aria-hidden="true"'}>${photoOf(prof)}</div>
+      <div class="about-prof-avatar"${prof.foto ? '' : ' aria-hidden="true"'}>${photoOf(prof, { width: 100, height: 100 })}</div>
       <div>
         <span class="kicker">Sobre o profissional</span>
         <h2>${prof.nome}</h2>

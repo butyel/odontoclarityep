@@ -475,32 +475,57 @@
 
 /* Grid da equipe (usada na Home e em /profissionais/) */
 .team { background: white; }
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.team .section-head { margin-bottom: 54px; }
+.team-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: stretch;
+}
 .team-card {
-  border: 1px solid var(--line); border-radius: 22px; padding: 28px 22px; background: white;
-  box-shadow: 0 4px 18px rgba(24,24,27,.04); display: flex; flex-direction: column; align-items: center;
-  text-align: center; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  border: 1px solid var(--line); border-radius: 22px; padding: 30px 26px 28px; background: white;
+  box-shadow: 0 4px 18px rgba(24,24,27,.04);
+  display: flex; flex-direction: column; align-items: center; height: 100%; min-width: 0;
+  text-align: center; overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 .team-card:hover { transform: translateY(-5px); border-color: #ebcaca; box-shadow: var(--shadow-md); }
+.team-card:focus-within { border-color: #ebcaca; }
+
+/* Caixa da foto: tamanho único para todos os cards, nunca distorce a imagem */
 .team-avatar {
-  width: 90px; height: 90px; border-radius: 50%;
+  width: 160px; height: 160px; border-radius: 50%; overflow: hidden; flex: 0 0 auto;
   background: linear-gradient(145deg, var(--red-700), var(--red-950));
-  color: white; display: grid; place-items: center; font-size: 1.8rem; font-weight: 800;
-  box-shadow: 0 10px 24px rgba(143,17,17,.22); margin-bottom: 20px;
+  color: white; display: grid; place-items: center; font-size: 2.6rem; font-weight: 800;
+  box-shadow: 0 10px 24px rgba(143,17,17,.22); margin: 0 auto 22px;
 }
-.team-card h3 { color: var(--ink); font-size: 1.05rem; letter-spacing: -.02em; }
-.team-role { color: var(--muted); font-size: .8rem; margin: 6px 0 20px; font-weight: 600; min-height: 40px; }
-.team-card .btn { width: 100%; margin-top: auto; }
+.team-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+}
+
+/* Área de texto: nome e especialidade sempre nas mesmas linhas em todos os cards */
+.team-card__body { display: flex; flex-direction: column; flex: 1 1 auto; width: 100%; min-width: 0; }
+.team-card__name {
+  color: var(--ink); font-weight: 700; letter-spacing: -.02em; line-height: 1.25;
+  font-size: 1.2rem; max-width: 100%; overflow-wrap: break-word; hyphens: none;
+  min-height: 3.75em; display: flex; align-items: center; justify-content: center;
+}
+.team-role {
+  color: var(--muted); font-size: 1rem; line-height: 1.45;
+  font-weight: 600; margin: 10px 0 0; max-width: 100%; overflow-wrap: break-word;
+  min-height: 2.9em;
+}
+.team-card__cta { margin-top: auto; padding-top: 22px; width: 100%; }
+.team-card__cta .btn { width: 100%; }
+.team-card__cta .btn:focus-visible { outline: 3px solid rgba(198,42,42,.35); outline-offset: 3px; }
 
 /* Página de perfil do profissional */
 .prof-hero { background: white; border-bottom: 1px solid var(--line); }
 .prof-hero-grid { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: center; }
 .prof-hero-avatar {
-  width: 220px; height: 220px; border-radius: 32px;
+  width: 220px; height: 220px; border-radius: 32px; overflow: hidden;
   background: linear-gradient(145deg, var(--red-700), var(--red-950));
   color: white; display: grid; place-items: center; font-size: 4rem; font-weight: 800;
   box-shadow: var(--shadow-red);
 }
+.prof-hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .prof-hero-copy h1 { font-size: clamp(2rem, 3.8vw, 2.75rem); letter-spacing: -.04em; color: var(--ink); }
 .prof-meta-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 24px; }
 .prof-pill {
@@ -580,7 +605,7 @@
 .soft-card-list .check-item { line-height: 1.6; }
 
 /* Grid de equipe com 2 colunas (páginas de serviço) */
-.team-grid.prof-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
+.team-grid.prof-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; margin: 0 auto; }
 
 /* Bloco "Sobre o profissional" dentro de artigos */
 .about-prof { background: white; }
@@ -589,11 +614,12 @@
   padding: 36px; border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow-sm);
 }
 .about-prof-avatar {
-  width: 100px; height: 100px; border-radius: 50%;
+  width: 100px; height: 100px; border-radius: 50%; overflow: hidden;
   background: linear-gradient(145deg, var(--red-700), var(--red-950));
   color: white; display: grid; place-items: center; font-size: 2rem; font-weight: 800;
   box-shadow: var(--shadow-red);
 }
+.about-prof-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .about-prof-grid h2 { font-size: 1.45rem; letter-spacing: -.03em; color: var(--ink); }
 .about-prof-grid p { color: var(--muted); margin: 6px 0 16px; font-size: .92rem; }
 
@@ -659,9 +685,14 @@ details a:hover { text-decoration: underline; }
 .not-found h1 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); color: var(--ink); margin-top: 14px; }
 .not-found p { color: var(--muted); margin: 12px auto 28px; max-width: 520px; }
 
+/* Cards de profissional: 2 por linha antes de ficarem estreitos demais */
+@media (max-width: 1199px) {
+  .team-grid:not(.prof-grid-2) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 /* Responsividade adicional */
 @media (max-width: 980px) {
-  .team-grid, .article-grid, .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid, .article-grid, .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .prof-hero-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; }
   .prof-actions { justify-content: center; }
   .about-prof-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; }
@@ -678,6 +709,9 @@ details a:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .team-grid, .article-grid, .steps-grid { grid-template-columns: 1fr; }
   .team-grid.prof-grid-2 { grid-template-columns: 1fr; }
+  .team-card { padding: 28px 22px 26px; }
+  .team-card__name { font-size: 1.12rem; min-height: 2.5em; }
+  .team-role { font-size: .95rem; min-height: 2.9em; }
   .page-hero-inner { padding: 48px 0 54px; }
   .prof-hero-avatar { width: 140px; height: 140px; font-size: 2.8rem; border-radius: 24px; }
   .soft-card-list { grid-template-columns: 1fr; padding: 22px 20px; }

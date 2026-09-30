@@ -25,6 +25,7 @@ const { PENDING } = require('./site.cjs');
  * @property {string}  [cro]           Registro já publicado no site atual
  * @property {string}  [foto]          Foto real em /assets/images/profissionais/
  * @property {string}  [fotoAlt]       Texto alternativo da foto
+ * @property {string}  [fotoPos]       object-position do recorte (padrão: center top)
  * @property {Array}   [formacao]      [{ curso, instituicao, ano }]
  * @property {Array}   [especializacoes] [{ titulo, instituicao, periodo }]
  * @property {Array}   [credenciais]   CRO, registro de especialista etc.
@@ -46,6 +47,9 @@ const professionals = [
     nomeNoSiteAtual: 'Dra. Maria Vitória L. A. Miguel',
     foto: '/assets/images/profissionais/maria-victoria-de-lima-araujo-miguel.jpg',
     fotoAlt: 'Retrato da Dra. Maria Victoria de Lima Araújo Miguel, ortodontista da Odonto Clarity',
+    // Retrato vertical (906x1600) com muito espaço no topo: o recorte padrão
+    // "center top" deixava o rosto baixo no círculo. Subimos ~20% do overflow.
+    fotoPos: 'center 20%',
     formacao: [
       {
         curso: 'Odontologia',
@@ -70,7 +74,15 @@ const professionals = [
     area: 'Implantodontia',
     responsavelTecnica: false,
     cro: null,
+    // FOTO PENDENTE — nenhuma imagem do Dr. Vinícius existe nos assets do projeto.
+    // Para usar a foto real: salvar em src/assets/images/profissionais/
+    // com o nome exato do slug + ".jpg" e trocar "foto: null" por:
+    //   foto: '/assets/images/profissionais/vinicius-jose-de-amorim-storniolo.jpg',
+    //   fotoAlt: 'Retrato do Dr. Vinícius José de Amorim Storniolo, implantodontista da Odonto Clarity',
+    // Enquanto "foto" for null, o site exibe o monograma de iniciais
+    // (mesma caixa, proporção e alinhamento das demais fotos).
     foto: null,
+    fotoAlt: 'Retrato do Dr. Vinícius José de Amorim Storniolo, implantodontista da Odonto Clarity',
     formacao: [],
     especializacoes: [],
     credenciais: [],
@@ -176,16 +188,13 @@ const professionalRelations = {
 
 const findBySlug = (slug) => professionals.find((p) => p.slug === slug);
 
-// Iniciais para avatar monograma (usado quando não há foto real).
-const initialsOf = (nome) =>
-  nome
-    .replace(/^(Dra?\.)\s*/i, '')
-    .split(' ')
-    .filter(Boolean)
-    .map((w) => w[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase();
+// Iniciais para o avatar monograma (usado apenas quando não há foto real).
+// Primeiro nome + último nome, sem honorífico (ex.: "Dr. Vinícius ... Storniolo" → VS).
+const initialsOf = (nome) => {
+  const palavras = nome.replace(/^(Dra?\.)\s*/i, '').split(' ').filter(Boolean);
+  if (palavras.length < 2) return palavras[0].slice(0, 2).toUpperCase();
+  return `${palavras[0][0]}${palavras[palavras.length - 1][0]}`.toUpperCase();
+};
 
 // Foto real (declarativa) ou monograma de iniciais como fallback.
 const photoOf = (prof, opts = {}) => {
@@ -195,7 +204,9 @@ const photoOf = (prof, opts = {}) => {
   if (width) attr.push(`width="${width}"`);
   if (height) attr.push(`height="${height}"`);
   if (loading) attr.push(`loading="${loading}"`, 'decoding="async"');
-  return `<img class="${className}" ${attr.join(' ')}>`;
+  const cls = className ? ` class="${className}"` : '';
+  const style = prof.fotoPos ? ` style="object-position: ${prof.fotoPos}"` : '';
+  return `<img${cls} ${attr.join(' ')}${style}>`;
 };
 
 const roleLabel = (p) => {

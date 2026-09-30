@@ -635,7 +635,7 @@ function profissionalPage(prof) {
   <main id="conteudo">
     <section class="prof-hero">
       <div class="container prof-hero-grid" style="padding: 56px 0 64px;">
-        <div class="prof-hero-avatar reveal${prof.foto ? ' prof-hero-avatar-photo' : ''}"${prof.foto ? '' : ' aria-hidden="true"'}>${photoOf(prof, { loading: 'eager' })}</div>
+        <div class="prof-hero-avatar reveal"${prof.foto ? '' : ' aria-hidden="true"'}>${photoOf(prof, { loading: 'eager', width: 440, height: 440 })}</div>
         <div class="prof-hero-copy reveal">
           <span class="kicker" style="color: var(--red-800);">Profissional</span>
           <h1>${prof.nome}</h1>
