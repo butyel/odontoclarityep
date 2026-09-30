@@ -19,6 +19,7 @@
  * @property {string} seoTitle
  * @property {string} seoDescription
  * @property {string} imagem
+ * @property {string} imagemHero       Foto em tamanho cheio usada no hero
  * @property {string} imagemAlt
  * @property {{titulo:string; paragrafos:string[]}} oQueE
  * @property {{titulo:string; texto:string; itens:string[]}} indicado
@@ -44,9 +45,9 @@ const services = [
     seoTitle: 'Implante Dentário em Presidente Epitácio | Odonto Clarity',
     seoDescription:
       'Implante dentário em Presidente Epitácio: conheça como funciona o tratamento de implantodontia na Odonto Clarity, quem atende e como iniciar uma avaliação.',
-    imagem:
-      'https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=1200&h=620&fit=crop&q=82',
-    imagemAlt: 'Implante dentário — procedimento de implantodontia',
+    imagem: '/assets/images/servicos/implante-dentario.webp',
+    imagemHero: '/assets/images/servicos/implante-dentario-hero.webp',
+    imagemAlt: 'Consulta de implante dentário na Odonto Clarity em Presidente Epitácio',
     oQueE: {
       titulo: 'O que é o implante dentário',
       paragrafos: [
@@ -115,9 +116,9 @@ const services = [
     seoTitle: 'Tratamento de Canal em Presidente Epitácio | Odonto Clarity',
     seoDescription:
       'Tratamento de canal em Presidente Epitácio: entenda quando pode ser indicado, como funciona e quem é o profissional de endodontia da Odonto Clarity.',
-    imagem:
-      'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1200&h=620&fit=crop&q=82',
-    imagemAlt: 'Tratamento de canal — endodontia',
+    imagem: '/assets/images/servicos/tratamento-de-canal.webp',
+    imagemHero: '/assets/images/servicos/tratamento-de-canal-hero.webp',
+    imagemAlt: 'Tratamento de canal na Odonto Clarity em Presidente Epitácio',
     oQueE: {
       titulo: 'O que é o tratamento de canal',
       paragrafos: [
@@ -187,9 +188,9 @@ const services = [
     seoTitle: 'Ortodontista em Presidente Epitácio | Odonto Clarity',
     seoDescription:
       'Ortodontia em Presidente Epitácio: saiba quando procurar um ortodontista, como funciona o tratamento com aparelho e quem atua na área na Odonto Clarity.',
-    imagem:
-      'https://images.unsplash.com/photo-1598257006458-087169a1f08d?w=1200&h=620&fit=crop&q=82',
-    imagemAlt: 'Ortodontia — tratamento com aparelho dentário',
+    imagem: '/assets/images/servicos/ortodontia.webp',
+    imagemHero: '/assets/images/servicos/ortodontia-hero.webp',
+    imagemAlt: 'Tratamento ortodôntico com aparelho na Odonto Clarity em Presidente Epitácio',
     oQueE: {
       titulo: 'O que é a ortodontia',
       paragrafos: [
@@ -259,9 +260,9 @@ const services = [
     seoTitle: 'Clareamento Dental em Presidente Epitácio | Odonto Clarity',
     seoDescription:
       'Clareamento dental em Presidente Epitácio: entenda como funciona, quais cuidados envolvem e por que a avaliação clínica é indispensável.',
-    imagem:
-      'https://images.unsplash.com/photo-1553787499-6f9133860278?w=1200&h=620&fit=crop&q=82',
-    imagemAlt: 'Clareamento dental — estética do sorriso',
+    imagem: '/assets/images/servicos/clareamento-dental.webp',
+    imagemHero: '/assets/images/servicos/clareamento-dental-hero.webp',
+    imagemAlt: 'Clareamento dental na Odonto Clarity em Presidente Epitácio',
     oQueE: {
       titulo: 'O que é o clareamento dental',
       paragrafos: [
@@ -328,9 +329,9 @@ const services = [
     seoTitle: 'Prótese Dentária em Presidente Epitácio | Odonto Clarity',
     seoDescription:
       'Prótese dentária em Presidente Epitácio: conheça os tipos mais comuns, quando podem ser indicadas e como funciona a reabilitação na Odonto Clarity.',
-    imagem:
-      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&h=620&fit=crop&q=82',
-    imagemAlt: 'Prótese dentária — reabilitação do sorriso',
+    imagem: '/assets/images/servicos/protese-dentaria.webp',
+    imagemHero: '/assets/images/servicos/protese-dentaria-hero.webp',
+    imagemAlt: 'Próteses dentárias apresentadas à paciente na Odonto Clarity em Presidente Epitácio',
     oQueE: {
       titulo: 'O que é a prótese dentária',
       paragrafos: [

@@ -171,8 +171,13 @@ const breadcrumb = (items) => `
 
 // ---------- page hero (páginas internas) -------------------------------------
 
-const pageHero = ({ kicker, title, lead, breadcrumbs, image, extra }) => `
-  <section class="page-hero" aria-labelledby="ph-title">
+const pageHero = ({ kicker, title, lead, breadcrumbs, image, imageAlt, extra }) => `
+  <section class="page-hero${image ? ' page-hero--photo' : ''}" aria-labelledby="ph-title">
+    ${
+      image
+        ? `<img class="page-hero-photo" src="${image}" alt="${imageAlt || ''}" fetchpriority="high" decoding="async">`
+        : ''
+    }
     <div class="container page-hero-inner">
       ${breadcrumbs ? breadcrumb(breadcrumbs) : ''}
       <div class="eyebrow"><span class="eyebrow-dot"></span>${kicker || 'Odonto Clarity'}</div>

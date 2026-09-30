@@ -21,7 +21,7 @@ const site = {
 
   tagline: 'Clínica odontológica em Presidente Epitácio',
   description:
-    'Odonto Clarity em Presidente Epitácio: clínica odontológica com atendimento humanizado, estrutura moderna e especialidades em clínico geral, ortodontia, implantodontia, estética orofacial e endodontia.',
+    'Odonto Clarity em Presidente Epitácio/SP: clínica odontológica com atendimento humanizado e especialistas em clínico geral, ortodontia, implantes e estética.',
 
   // Contato ---------------------------------------------------------------
   phoneDisplay: '(18) 99678-2225',

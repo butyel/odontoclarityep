@@ -1,7 +1,8 @@
 ---
 title: "Faltou um dente: quando o implante dentário pode ser uma opção"
+seoTitle: "Faltou um dente: quando o implante é opção | Odonto Clarity"
 slug: "faltou-um-dente-quando-o-implante-dentario-pode-ser-uma-opcao"
-description: "A ausência de um dente afeta a mastigação e o alinhamento da boca. Entenda quando o implante dentário pode ser avaliado e por que o planejamento clínico é indispensável."
+description: "A ausência de um dente afeta a mastigação e o alinhamento da boca. Entenda quando o implante dentário pode ser avaliado na clínica."
 category: "Implantes"
 author: null
 reviewedBy: "vinicius-jose-de-amorim-storniolo"

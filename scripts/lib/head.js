@@ -14,15 +14,14 @@ function escapeAttr(s) {
 function head(opts = {}) {
   const title = escapeAttr(opts.title || 'Odonto Clarity');
   const desc = escapeAttr(opts.description || opts.site?.description || '');
-  const canonical = opts.canonical || opts.site?.url('/');
-  const siteUrl = opts.site?.url('/') || canonical.replace(/\/[^/]+\/$/, '/');
+  // canonical: null omite a tag (páginas noindex, como a 404).
+  const canonical = opts.canonical === null ? null : opts.canonical || opts.site?.url('/');
   const ogType = opts.ogType || 'website';
   const ogImage = opts.ogImage || opts.site?.socialImage || '';
   const robots = opts.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
   const lang = opts.lang || 'pt-BR';
   const jsonLd = Array.isArray(opts.jsonLd) ? opts.jsonLd : (opts.jsonLd ? [opts.jsonLd] : []);
   const extra = opts.extraHead || '';
-  const isHome = opts.isHome === true;
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -44,7 +43,7 @@ function head(opts = {}) {
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${desc}">
 
-  <link rel="canonical" href="${escapeAttr(canonical)}">
+  ${canonical === null ? '' : `<link rel="canonical" href="${escapeAttr(canonical)}">`}
   <link rel="icon" href="/assets/images/logo/Odonto Clarity Logo Topbar.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">

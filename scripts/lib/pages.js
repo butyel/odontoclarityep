@@ -48,17 +48,21 @@ const POSTS = loadPosts();
 const isPending = (v) => !v || v === '[INFORMAÇÃO A CONFIRMAR]';
 
 function doc(opts) {
-  const { main, active, isHome, title, description, canonical, ogImage, jsonLd, ogType, extraHead } = opts;
-  const canonicalUrl = site.url(canonical || '/');
+  const { main, active, title, description, canonical, ogImage, jsonLd, ogType, robots, extraHead } = opts;
+  // canonical: null omite a tag (404). strings relativas viram URL absoluta.
+  const canonicalUrl = canonical === null ? null : site.url(canonical || '/');
+  // og:image precisa de URL absoluta; caminhos locais ("/assets/...") viram site.url().
+  const og = ogImage || site.socialImage;
+  const ogUrl = og.startsWith('/') ? site.url(og) : og;
   return (
     head({
       title,
       description,
       canonical: canonicalUrl,
-      ogImage: ogImage || site.socialImage,
+      ogImage: ogUrl,
       ogType: ogType || 'website',
+      robots,
       jsonLd,
-      isHome,
       extraHead
     }) +
     '\n<body>\n' +
@@ -95,7 +99,6 @@ function homePage() {
   return doc({
     main,
     active: 'home',
-    isHome: true,
     title: 'Clínica Odontológica em Presidente Epitácio | Odonto Clarity',
     description: site.description,
     canonical: '/',
@@ -114,8 +117,7 @@ function sobrePage() {
       kicker: 'A clínica',
       title: 'A Odonto Clarity',
       lead: 'Clínica odontológica em Presidente Epitácio com atendimento humanizado e estrutura moderna.',
-      breadcrumbs: [{ href: site.url('/'), label: 'Início' }, { href: site.url('/sobre/'), label: 'A Clínica' }],
-      image: 'far'
+      breadcrumbs: [{ href: site.url('/'), label: 'Início' }, { href: site.url('/sobre/'), label: 'A Clínica' }]
     })}
 
     <section class="about">
@@ -404,6 +406,8 @@ function servicoPage(svc) {
       kicker: svc.kicker,
       title: svc.titulo,
       lead: svc.lead,
+      image: svc.imagemHero,
+      imageAlt: svc.imagemAlt,
       breadcrumbs: [
         { href: site.url('/'), label: 'Início' },
         { href: site.url('/servicos/'), label: 'Tratamentos' },
@@ -859,7 +863,7 @@ function artigoPage(post) {
   return doc({
     main,
     active: '/blog/',
-    title: `${post.title} | Odonto Clarity`,
+    title: post.seoTitle || `${post.title} | Odonto Clarity`,
     description: post.description,
     canonical: `/blog/${post.slug}/`,
     ogImage: post.featuredImage,
@@ -945,7 +949,7 @@ function notFoundPage() {
     active: null,
     title: 'Página não encontrada | Odonto Clarity',
     description: 'A página solicitada não existe.',
-    canonical: '/',
+    canonical: null,
     robots: 'noindex, follow',
     jsonLd: []
   });

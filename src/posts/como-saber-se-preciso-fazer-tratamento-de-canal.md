@@ -1,7 +1,7 @@
 ---
 title: "Como saber se preciso fazer tratamento de canal?"
 slug: "como-saber-se-preciso-fazer-tratamento-de-canal"
-description: "Dor de dente, sensibilidade e cárie profunda: entenda com a Odonto Clarity quando o tratamento de canal pode ser indicado e por que só a avaliação clínica define o diagnóstico."
+description: "Dor de dente, sensibilidade e cárie profunda: entenda quando o tratamento de canal é indicado e por que a avaliação clínica define o diagnóstico."
 category: "Endodontia"
 author: null
 reviewedBy: "aline-conceicao-guilhermino-matos"

@@ -173,6 +173,7 @@ function loadPosts() {
       const { data, body } = parseFrontmatter(raw);
       return {
         title: data.title,
+        seoTitle: data.seoTitle || null,
         slug: data.slug,
         description: data.description,
         category: data.category,
